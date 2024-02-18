@@ -74,7 +74,7 @@
         </section>
 
         <!-- Paribahan info section -->
-        <section class="mt-10 space-y-10">
+        <section class="w-10/12 mx-auto mt-10 space-y-10 shadow-xl rounded-lg p-10">
             <div class="text-center">
                 <h3 class="text-3xl font-semibold">P.H Paribahan</h3>
                 <p class="text-xl">Yes, you can run unit tests and view the results directly within the app. The <br>
@@ -104,10 +104,11 @@
         </section>
 
         <!-- ticket section -->
-        <section class="mt-10">
-            <div class="grid grid-cols-2 w-10/12 mx-auto">
-                <div>
-                    <h3>Select your seat</h3>
+        <section class="mt-20">
+            <div class=" gap-5 grid grid-cols-2 w-10/12 mx-auto shadow-2xl rounded-lg p-10">
+                <div class=" space-y-3">
+                    <h3 class="text-xl font-semibold">Select your seat</h3>
+                    <hr>
                     <div class="grid grid-cols-2">
                         <div>
                             <img src="./images/seat-gray.png" alt="">
@@ -119,6 +120,8 @@
                         </div>
                         
                     </div>
+                    <hr>
+
                     <div>
                         <img src="./images/s" alt="">
                     </div>
@@ -128,39 +131,104 @@
                         <div class="flex gap-5 ">
                         A
                         
-                            <button class="btn seat-btn">A1</button>
-                            <button class="btn seat-btn">A2</button>
-                        
-                            <button class="btn seat-btn">A3</button>
-                            <button class="btn seat-btn">A4</button>
+                            <button id="A1" class="btn seat-btn">A1</button>
+                            <button id="A2" class="btn seat-btn">A2</button>
+                         
+                            <button id="A3" class="btn seat-btn">A3</button>
+                            <button id="A4" class="btn seat-btn">A4</button>
                         
                     </div>
                     <div class="flex gap-5 ">
                         B
-                        <button class="btn seat-btn">B1</button>
-                        <button class="btn seat-btn">B2</button>
-                        <button class="btn seat-btn">B3</button>
-                        <button class="btn seat-btn">B4</button>
+                        <button id="B1" class="btn seat-btn">B1</button>
+                        <button id="B2" class="btn seat-btn">B2</button>
+                        <button id="B3" class="btn seat-btn">B3</button>
+                        <button id="B4" class="btn seat-btn">B4</button>
                     </div>
                     <div class="flex gap-5 ">
                         C
-                        <button class="btn seat-btn">C1</button>
-                        <button class="btn seat-btn">C2</button>
-                        <button class="btn seat-btn">C3</button>
-                        <button class="btn seat-btn">C4</button>
+                        <button id="C1" class="btn seat-btn">C1</button>
+                        <button id="C2" class="btn seat-btn">C2</button>
+                        <button id="C3" class="btn seat-btn">C3</button>
+                        <button id="C4" class="btn seat-btn">C4</button>
                     </div>
                     <div class="flex gap-5 ">
                         D
-                        <button class="btn seat-btn">D1</button>
-                        <button class="btn seat-btn">D2</button>
-                        <button class="btn seat-btn">D3</button>
-                        <button class="btn seat-btn">D4</button>
+                        <button id="D1" class="btn seat-btn">D1</button>
+                        <button id="D2" class="btn seat-btn">D2</button>
+                        <button id="D3" class="btn seat-btn">D3</button>
+                        <button id="D4" class="btn seat-btn">D4</button>
                     </div>
 
                     </div>
                 </div>
-                <div>
-                    <h3>Select Your Seat</h3>
+                <div class=" space-y-5">
+                    <h3 class="text-xl font-semibold">Select Your Seat</h3>
+                    <hr>
+                    <!-- seat calculation -->
+                    <table class="border-green-300">
+                        <tr class="flex gap-16">
+                            
+                            <th > <span id="seat-count">0</span> Seat</th>
+                            <th>Class</th>
+                            <th>Price</th>
+                        </tr>
+                        <tr id="seat">
+
+                        </tr>
+                        <tr id="Class">
+                            
+                        </tr>
+                        <tr id="Price">
+
+                        </tr>
+                    </table>
+                    <hr>
+                    <div class="flex gap-24 font-semibold">
+                        <p>Total Price</p>
+                        <p>BDT <span id="total-price">0</span></p>
+                    </div>
+
+                    <div class="coupon">
+                        <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+                        <button class="btn btn-apply bg-green-400 text-white -ml-20">Apply</button>
+                    </div>
+                    <div class="flex gap-24 font-semibold">
+                        <p>Grand Total</p>
+                        <p>BDT <span id="grand-total">0</span></p>
+                    </div>
+                    <!-- input info section -->
+                    <label class="form-control w-full max-w-xs">
+                        <div class="label">
+                          <span class="label-text font-medium">Passenger Name</span>
+                          
+                        </div>
+                        <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+                        
+                      </label>
+                    <label class="form-control w-full max-w-xs">
+                        <div class="label">
+                          <span class="label-text font-medium">Passenger Phone Number</span>
+                          
+                        </div>
+                        <input type="number" placeholder="Phone number" id="phone-number" class="input input-bordered w-full max-w-xs" />
+                        
+                      </label>
+                    <label class="form-control w-full max-w-xs">
+                        <div class="label">
+                          <span class="label-text font-medium">Email ID</span>
+                          
+                        </div>
+                        <input type="email" placeholder="Email ID" class="input input-bordered w-full max-w-xs" />
+                        
+                      </label>
+
+                      <button class="btn btn-next bg-green-600 w-3/5 mt-5"> Next</button>
+
+                      <div class="flex justify-between mt-5">
+                        <p> Terms and Conditions</p>
+                        <p> Cancellation Policy</p>
+                      </div>
                 </div>
             </div>
         </section>
