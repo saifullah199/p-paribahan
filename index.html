@@ -92,12 +92,12 @@
                     </div>
                     <button class="btn flex">
                         <img src="./images/seat-green.png" alt="">
-                        <span> 40</span> Seats Left
+                        <span id="seat-left"> 16</span> Seats Left
                     </button>
                 </div>
                 <div class="flex-1">
                     <img src="./images/fare.png" alt="">
-                    <h3 class="text-2xl font-semibold">550 Taka</h3>
+                    <h3  class="text-2xl font-semibold"><span id="seat-price">550</span> Taka</h3>
                     <p>Per Seat</p>
                 </div>
             </div>
@@ -126,38 +126,38 @@
                         <img src="./images/s" alt="">
                     </div>
 
-                    <div class="space-y-5">
+                    <div id="seatNumber"   class="space-y-5">
 
                         <div class="flex gap-5 ">
                         A
                         
-                            <button id="A1" class="btn seat-btn">A1</button>
-                            <button id="A2" class="btn seat-btn">A2</button>
+                            <button id="A1" class="btn seat-btn"><h5>A1</h5></button>
+                            <button id="A2" class="btn seat-btn"><h5>A2</h5></button>
                          
-                            <button id="A3" class="btn seat-btn">A3</button>
-                            <button id="A4" class="btn seat-btn">A4</button>
+                            <button id="A3" class="btn seat-btn"><h5>A3</h5></button>
+                            <button id="A4" class="btn seat-btn"><h5>A4</h5></button>
                         
                     </div>
                     <div class="flex gap-5 ">
                         B
-                        <button id="B1" class="btn seat-btn">B1</button>
-                        <button id="B2" class="btn seat-btn">B2</button>
-                        <button id="B3" class="btn seat-btn">B3</button>
-                        <button id="B4" class="btn seat-btn">B4</button>
+                        <button id="B1" class="btn seat-btn"><h5>B1</h5></button>
+                        <button id="B2" class="btn seat-btn"><h5>B2</h5></button>
+                        <button id="B3" class="btn seat-btn"><h5>B3</h5></button>
+                        <button id="B4" class="btn seat-btn"><h5>B4</h5></button>
                     </div>
                     <div class="flex gap-5 ">
                         C
-                        <button id="C1" class="btn seat-btn">C1</button>
-                        <button id="C2" class="btn seat-btn">C2</button>
-                        <button id="C3" class="btn seat-btn">C3</button>
-                        <button id="C4" class="btn seat-btn">C4</button>
+                        <button id="C1" class="btn seat-btn"><h5>C1</h5></button>
+                        <button id="C2" class="btn seat-btn"><h5>C2</h5></button>
+                        <button id="C3" class="btn seat-btn"><h5>C3</h5></button>
+                        <button id="C4" class="btn seat-btn"><h5>C4</h5></button>
                     </div>
                     <div class="flex gap-5 ">
                         D
-                        <button id="D1" class="btn seat-btn">D1</button>
-                        <button id="D2" class="btn seat-btn">D2</button>
-                        <button id="D3" class="btn seat-btn">D3</button>
-                        <button id="D4" class="btn seat-btn">D4</button>
+                        <button id="D1" class="btn seat-btn"><h5>D1</h5></button>
+                        <button id="D2" class="btn seat-btn"><h5>D2</h5></button>
+                        <button id="D3" class="btn seat-btn"><h5>D3</h5></button>
+                        <button id="D4" class="btn seat-btn"><h5>D4</h5></button>
                     </div>
 
                     </div>
@@ -173,13 +173,21 @@
                             <th>Class</th>
                             <th>Price</th>
                         </tr>
-                        <tr id="seat">
-
+                        
+                        <!-- <div>
+                            <div id="seat"></div>
+                            <div id="seat-Class"></div>
+                            <div id="price"></div>
+                        </div> -->
+                        <tr >
+                            <td id="seat" class=""></td>
+                            <td id="seat-Class"></td>
+                            <td id="price"></td>
                         </tr>
-                        <tr id="Class">
+                        <tr >
                             
                         </tr>
-                        <tr id="Price">
+                        <tr >
 
                         </tr>
                     </table>
@@ -189,9 +197,9 @@
                         <p>BDT <span id="total-price">0</span></p>
                     </div>
 
-                    <div class="coupon">
-                        <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
-                        <button class="btn btn-apply bg-green-400 text-white -ml-20">Apply</button>
+                    <div id="coupon-section" class="coupon">
+                        <input id="coupon-code" type="text" placeholder="type coupon" class="input input-bordered w-full max-w-xs" />
+                        <button id="btn-apply" class="btn  bg-green-400 text-white -ml-20">Apply</button>
                     </div>
                     <div class="flex gap-24 font-semibold">
                         <p>Grand Total</p>
@@ -223,7 +231,27 @@
                         
                       </label>
 
-                      <button class="btn btn-next bg-green-600 w-3/5 mt-5"> Next</button>
+                      <!-- <button class="btn btn-next bg-green-600 w-3/5 mt-5"> Next</button> -->
+                      
+                 <button class="btn bg-green-600 w-3/5 mt-5" onclick="my_modal_1.showModal()"> Next </button>
+                <dialog id="my_modal_1" class="modal">
+                <div class="modal-box grid grid-cols-1 text-center">
+                    <div class="flex justify-center">
+                        <img  src="./images/success.png" alt="">
+                    </div>
+                <h3 class="font-bold text-lg">Success!</h3>
+                <p class="py-4">Thank you for booking our Bus seats. <br>
+                We are working hard for finding best services and deals for you!</p>
+                    <div class="modal-action ">
+                <form method="dialog">
+       
+                <div class="flex justify-center ">
+                    <button class="btn bg-green-700 rounded-full w-[150px] text-white">Continue</button>
+                </div>
+                </form>
+                </div>
+                </div>
+                </dialog>
 
                       <div class="flex justify-between mt-5">
                         <p> Terms and Conditions</p>
@@ -233,6 +261,7 @@
             </div>
         </section>
     </main>
-    
+    <script src="index.js"> </script>
+    <script src="paribahan.js"></script>
 </body>
 </html>
