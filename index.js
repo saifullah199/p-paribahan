@@ -15,11 +15,22 @@ for ( let index =0; index< btns.length; index ++){
         btn.style.backgroundColor = 'green';
         seatCount = seatCount + 1;
         document.getElementById("seat-count").innerText= seatCount;
-        if( seatCount > 4){
-            // document.getElementById("seatNumber").disabled = true;
-            // const seatNumber = document.getElementById("seatNumber");
-            // seatNumber.setAttribute("disabled", false);
-            return;
+        if( seatCount >= 4){
+            
+            
+            const buttons = document.querySelectorAll('.seat-btn');
+
+                
+            for (const button of buttons){
+                button.disabled = true;
+            }
+                // buttons.forEach(button => {
+                //  button.disabled = true;
+                // });
+
+
+
+    
         }
 
         
@@ -105,3 +116,20 @@ function hideElementById(elementId){
     const element =document.getElementById(elementId);
     element.classList.add("hidden");
 }
+
+
+let buttonClickCount = 0;
+
+        function handleClick(event) {
+            const element  = event.target.seatNumber;
+            buttonClickCount[buttonId] = buttonClickCount[buttonId] || 0;
+            buttonClickCount[buttonId]++;
+
+            if (buttonClickCount[buttonId] > 4) {
+                event.target.disabled = true;
+            }
+        }
+
+        document.querySelectorAll('.seat-btn').forEach(button => {
+            button.addEventListener('click', handleClick);
+        });
